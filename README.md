@@ -1,5 +1,5 @@
 # zuri-num-guessing-game
 
-Replit link below
+Replit link: 
 https://replit.com/@RemmySpicy/zuri-num-guessing-game
 
