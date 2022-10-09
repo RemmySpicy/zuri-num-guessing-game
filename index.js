@@ -14,8 +14,8 @@ function gameStart(range) {
   if (!userName) userName = prompt("Please enter your name", '');
 
   correctAnswer = Math.floor(Math.random() * range.length) + 1;
-  console.log(`Next Answer is ${correctAnswer}`)
-  userGuess = prompt(`LEVEL ${range.length - 1} \nGuess a number between 1 and ${range.length}`, correctAnswer);
+
+  userGuess = prompt(`LEVEL ${range.length - 1} \nGuess a number between 1 and ${range.length}`, '');
 
   if (userGuess == correctAnswer) {
     alert('You got it right!');
