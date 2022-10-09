@@ -7,15 +7,15 @@ startGame.addEventListener('click', () => gameStart(options));
 let options = [1, 2];
 
 // Player name
-let userName;
+let playerName;
 
 // Game logic
 function gameStart(range) {
-  if (!userName) userName = prompt("Please enter your name", '');
+  if (!playerName) playerName = prompt("Please enter your name", '');
 
   correctAnswer = Math.floor(Math.random() * range.length) + 1;
 
-  userGuess = prompt(`LEVEL ${range.length - 1} \nGuess a number between 1 and ${range.length}`, '');
+  userGuess = prompt(`PLAYER: ${playerName}      LEVEL: ${range.length - 1} \nGuess a number between 1 and ${range.length}.`, '');
 
   if (userGuess == correctAnswer) {
     alert('You got it right!');
@@ -23,6 +23,6 @@ function gameStart(range) {
     gameStart(range);
   } else {
     options = [1, 2];
-    alert('You Failed! Better luck next time');
+    alert('You Failed! Better luck next time.');
   }
 }
