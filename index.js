@@ -11,18 +11,27 @@ let playerName;
 
 // Game logic
 function gameStart(range) {
+  // copy range to avoid side effect
+  let innerRange = [...range];
+
   if (!playerName) playerName = prompt("Please enter your name", '');
 
-  correctAnswer = Math.floor(Math.random() * range.length) + 1;
+  // get random number from range
+  correctAnswer = Math.floor(Math.random() * innerRange.length) + 1;
 
-  userGuess = prompt(`PLAYER: ${playerName}      LEVEL: ${range.length - 1} \nGuess a number between 1 and ${range.length}.`, '');
+  userGuess = prompt(`PLAYER: ${playerName}      LEVEL: ${innerRange.length - 1} \nGuess a number between 1 and ${innerRange.length}.`, correctAnswer);
 
   if (userGuess == correctAnswer) {
     alert('You got it right!');
-    range.push(range.length + 1);
-    gameStart(range);
+
+    // increase range
+    innerRange.push(innerRange.length + 1);
+
+    gameStart(innerRange);
   } else {
-    options = [1, 2];
     alert('You Failed! Better luck next time.');
+
+    // reset range
+    innerRange = [1, 2];
   }
 }
