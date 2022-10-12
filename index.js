@@ -19,7 +19,10 @@ function gameStart(range) {
   // get random number from range
   correctAnswer = Math.floor(Math.random() * innerRange.length) + 1;
 
-  userGuess = prompt(`PLAYER: ${playerName}      LEVEL: ${innerRange.length - 1} \nGuess a number between 1 and ${innerRange.length}.`, correctAnswer);
+  // Log next answer
+  console.log(`Next answer is ${correctAnswer}`)
+  
+  userGuess = prompt(`PLAYER: ${playerName}      LEVEL: ${innerRange.length - 1} \nGuess a number between 1 and ${innerRange.length}.`, '');
 
   if (userGuess == correctAnswer) {
     alert('You got it right!');
