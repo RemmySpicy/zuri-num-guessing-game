@@ -1,7 +1,8 @@
-const startGame = document.querySelector('.start-game');
+// const startGame = document.querySelector('.start-game');
 
 // Game start event 
-startGame.addEventListener('click', () => gameStart(options));
+// startGame.addEventListener('click', () => gameStart(options));
+document.addEventListener('DOMContentLoaded', () => gameStart(options))
 
 // Options Array
 let options = [1, 2];
@@ -33,7 +34,7 @@ function gameStart(range) {
     gameStart(innerRange);
   } else {
     alert('You Failed! Better luck next time.');
-
+    confirm('Do you want to play again?') ? gameStart(options) : console.log('bye');
     // reset range
     innerRange = [1, 2];
   }
